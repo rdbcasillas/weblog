@@ -1,0 +1,27 @@
+{
+  "name": "weblog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@f3ve/vue-markdown-it": "^0.2.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "markdown-it": "^14.1.0",
+    "marked": "^13.0.3",
+    "vue": "^3.4.31",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "vite": "^4.5.3",
+    "vite-plugin-md": "^0.21.5"
+  }
+}
