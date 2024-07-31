@@ -37,9 +37,9 @@ onMounted(async () => {
 
 <style>
 .prose {
-  max-width: 65ch;
+  max-width: 100%;
   margin: auto;
-  padding: 2rem;
+  padding: 1rem;
   font-family: sans-serif;
   line-height: 1.6;
 }
