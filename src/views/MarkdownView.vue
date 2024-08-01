@@ -1,4 +1,5 @@
 <template>
+  <Breadcrumb />
   <div class="prose">
     <h1 v-if="title" class="text-3xl font-bold mb-4">{{ title }}</h1>
     <vue-markdown-it :source="content" />
@@ -6,9 +7,11 @@
 </template>
 
 <script setup>
+import matter from "gray-matter";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router"; // Import useRoute
 import { VueMarkdownIt } from "@f3ve/vue-markdown-it";
+import Breadcrumb from "../components/Breadcrumb.vue";
 
 const route = useRoute();
 const title = ref("");

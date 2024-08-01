@@ -1,10 +1,10 @@
-- **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
-  resize in browser.
-- **[babelfish](https://github.com/nodeca/babelfish/)** - developer friendly
-  i18n with plurals support and easy syntax.
-
-You will like those projects!
-
+---
+date: 2024-02-02
+draft: false
+params:
+  author: John Smith
+title: Let It Be
+weight: 10
 ---
 
 # h1 Heading 8-)

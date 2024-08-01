@@ -1,3 +1,12 @@
+---
+date: 2024-02-02
+draft: false
+params:
+  author: John Smith
+title: A Day In The Life
+weight: 10
+---
+
 # MY Title
 
 - **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
