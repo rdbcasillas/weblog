@@ -5,24 +5,28 @@
         <li>
           <router-link
             to="/writing"
-            class="text-lg text-blue-600 hover:underline"
+            class="text-lg text-lightbrown hover:underline"
             >Writings</router-link
           >
         </li>
         <li>
-          <router-link to="/links" class="text-lg text-blue-600 hover:underline"
+          <router-link
+            to="/links"
+            class="text-lg text-lightbrown hover:underline"
             >Links</router-link
           >
         </li>
         <li>
           <router-link
             to="/portal"
-            class="text-lg text-blue-600 hover:underline"
+            class="text-lg text-lightbrown hover:underline"
             >Portal</router-link
           >
         </li>
         <li>
-          <router-link to="/music" class="text-lg text-blue-600 hover:underline"
+          <router-link
+            to="/music"
+            class="text-lg text-lightbrown hover:underline"
             >Music</router-link
           >
         </li>

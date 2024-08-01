@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen bg-blue-100 p-4">
+  <div class="min-h-screen bg-sepia p-4">
     <header class="flex justify-between items-center mb-4">
       <h1 class="text-3xl font-bold text-gray-800">
-        <router-link to="/" class="text-lg text-blue-600 hover:underline"
+        <router-link to="/" class="text-lg text-brown hover:underline"
           >Nth Space</router-link
         >
       </h1>
