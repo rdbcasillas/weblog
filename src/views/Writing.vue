@@ -1,19 +1,28 @@
 <template>
   <div>
     <Breadcrumb />
+
     <div class="pt-5">
       <ul class="list-none pl-5">
         <li
-          v-for="(file, index) in markdownFiles"
+          v-for="(file, index) in sortedMarkdownFiles"
           :key="index"
           class="p-2 transition-colors duration-300"
         >
           <router-link
             :to="{ name: 'MarkdownView', params: { file: file.name } }"
-            class="text-gray-800 hover:text-gray-600 hover:underline font-semibold"
+            class="text-gray-800 hover:text-gray-600 hover:underline font-semibold post-title"
           >
             {{ file.title || file.name }}
           </router-link>
+          <span v-if="file.date" class="text-gray-500 text-sm ml-1">
+            <span class="pipe"> | </span> {{ formatDate2(file.date) }}
+          </span>
+          <div class="tags">
+            <span v-for="(tag, idx) in file.tags" :key="idx" class="tag-item">
+              {{ tag }}
+            </span>
+          </div>
         </li>
       </ul>
     </div>
@@ -35,6 +44,43 @@ export default {
       }),
     };
   },
+  computed: {
+    sortedMarkdownFiles() {
+      return this.markdownFiles.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+    },
+  },
+  methods: {
+    formatDate(date) {
+      if (!date) return "";
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return date.toLocaleDateString(undefined, options);
+    },
+    formatDate2(dateString) {
+      const date = new Date(dateString);
+      const options = { month: "short" };
+      const month = date.toLocaleDateString("en-US", options);
+      const day = date.getDate();
+      const suffix = this.getOrdinalSuffix(day);
+      const year = date.getFullYear().toString().slice(-2);
+
+      return `${day}${suffix} ${month}, ${year}`;
+    },
+    getOrdinalSuffix(day) {
+      if (day > 3 && day < 21) return "th"; // special case for 11th-13th
+      switch (day % 10) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    },
+  },
   async created() {
     this.markdownFiles = await Promise.all(
       Object.keys(markdownFiles).map(async (file) => {
@@ -49,9 +95,36 @@ export default {
           path: file,
           name: fileName,
           title: data.title || fileName,
+          date: data.date || "1970-01-01",
+          tags: data.tags || [],
         };
       })
     );
   },
 };
 </script>
+
+<style>
+.post-title {
+  color: #654321; /* Dark Olive Green */
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag-item {
+  background-color: #c4d6a3;
+  color: #555;
+  font-size: 0.675rem;
+  padding: 0.15rem 0.2rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+.pipe {
+  font-size: 22px;
+  color: forestgreen;
+}
+</style>
