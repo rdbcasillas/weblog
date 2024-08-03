@@ -10,7 +10,7 @@
           class="p-2 transition-colors duration-300"
         >
           <router-link
-            :to="{ name: 'MarkdownView', params: { file: file.name } }"
+            :to="{ name: 'WritingMarkdownView', params: { file: file.name } }"
             class="text-gray-800 hover:text-gray-600 hover:underline font-semibold post-title"
           >
             {{ file.title || file.name }}

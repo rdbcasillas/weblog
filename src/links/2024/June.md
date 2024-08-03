@@ -1,0 +1,51 @@
+## June 2024 links
+
+- https://e360.yale.edu/features/global_extinction_rates_why_do_estimates_vary_so_wildly
+- https://www.space.com/west-antarctic-ice-sheet-melting-unavoidable
+- https://nautil.us/the-collapse-is-coming-will-humanity-adapt-626051/
+- https://www.kalzumeus.com/2011/07/08/business-psychology/
+- https://www.lesswrong.com/posts/rWnCXouKEsJfBcMmA/positive-focusing
+- https://longnow.org/essays/richard-feynman-connection-machine/
+  - In retrospect I realize that in almost everything that we worked on together, we were both amateurs. In digital physics, neural networks, even parallel computing, we never really knew what we were doing. But the things that we studied were so new that no one else knew exactly what they were doing either. It was amateurs who made the progress.
+  - Actually, I doubt that it was "progress" that most interested Richard. He was always searching for patterns, for connections, for a new way of looking at something, but I suspect his motivation was not so much to understand the world as it was to find new ideas to explain. The act of discovery was not complete for him until he had taught it to someone else.
+  - "Yeah," he sighed, "that bugs me sometimes too. But not so much as you think." And after a few more steps, "When you get as old as I am, you start to realize that you've told most of the good stuff you know to other people anyway."
+  - We walked along in silence for a few minutes. Then we came to a place where another trail crossed and Richard stopped to look around at the surroundings. Suddenly a grin lit up his face. "Hey," he said, all trace of sadness forgotten, "I bet I can show you a better way home."
+-
+-
+- https://www.oreilly.com/radar/what-we-learned-from-a-year-of-building-with-llms-part-i/
+  - The idea of in-context learning via n-shot prompts is to provide the LLM with a few examples that demonstrate the task and align outputs to our expectations.
+  - If n is too low, the model may over-anchor on those specific examples, hurting its ability to generalize. As a rule of thumb, aim for n ≥ 5. Don’t be afraid to go as high as a few dozen.
+  - Chain of thought prompting - CoT - LLM explains thought process before final answer
+  - original - "let's think step by step"
+  - can make CoT more specific by adding extra sentence or two, for eg. summary of meeting transcript
+    - First, list the key decisions, follow-up items, and associated owners in a sketchpad.
+    - Then, check that the details in the sketchpad are factually consistent with the transcript.
+    - Finally, synthesize the key points into a concise summary.
+  - Providing relevant resources - RAG - expand model's knowledge base and reduce hallucinations
+    - ask it to emphasize resource use and refer to them directly
+  - Structuring input and output well is important
+    - adding serialization formatting
+    - [Instructor](https://github.com/jxnl/instructor) and [Outlines](https://github.com/outlines-dev/outlines) work well for structured output. (If you’re importing an LLM API SDK, use Instructor; if you’re importing Huggingface for a self-hosted model, use Outlines.)
+    - Claude prefers xml while gpt favors markdown and json
+  - Have small prompts that do one thing and only one thing well
+    - Instead of having a single, catch-all prompt for the meeting transcript summarizer, we can break it into steps to:
+      - Extract key decisions, action items, and owners into structured format
+      - Check extracted details against the original transcription for consistency
+      - Generate a concise summary from the structured details
+  - Improve the context token by removing irrelevant stuff
+  - The other key optimization is the structure of your context. Your bag-of-docs representation isn’t helpful for humans, don’t assume it’s any good for agents. Think carefully about how you structure your context to underscore the relationships between parts of it, and make extraction as simple as possible.
+  - Information Retrieval or RAG
+    - Practitioners have found RAG effective at providing knowledge and improving output, while requiring far less effort and cost compared to finetuning.RAG is only as good as the retrieved documents’ relevance, density, and detail
+  - Like traditional recommendation systems, the rank of retrieved items will have a significant impact on how the LLM performs on downstream tasks. To measure the impact, run a RAG-based task but with the retrieved items shuffled—how does the RAG output perform?
+  - Second, we also want to consider **information density.** If two documents are equally relevant, we should prefer one that’s more concise and has lesser extraneous details. Returning to our movie example, we might consider the movie transcript and all user reviews to be relevant in a broad sense. Nonetheless, the top-rated reviews and editorial reviews will likely be more dense in information.
+  - Prefer RAG over finetuning
+  - Beyond improved performance, RAG comes with several practical advantages too. First, compared to continuous pretraining or fine-tuning, it’s easier—and cheaper!—to keep retrieval indices up-to-date. Second, if our retrieval indices have problematic documents that contain toxic or biased content, we can easily drop or modify the offending documents.
+  - Long context models won't make RAG obsolete
+  - Prompting an LLM is just the beginning. To get the most juice out of them, **we need to think beyond a single prompt and embrace workflows.** For example, how could we split a single complex task into multiple simpler tasks? When is finetuning or caching helpful with increasing performance and reducing latency/cost?
+  - Small tasks with clear objectives make for the best agent or flow prompts. It’s not required that every agent prompt requests structured output, but structured outputs help a lot to interface with whatever system is orchestrating the agent’s interactions with the environment.
+  - ![image.png](../assets/image_1717508853283_0.png)
+  - Deterministic workflows essential for now
+  - The most successful agent builders may be those with strong experience managing junior engineers because the process of generating plans is similar to how we instruct and manage juniors. We give juniors clear goals and concrete plans, instead of vague open-ended directions, and we should do the same for our agents too.
+  - LLM-as-Judge, where we use a strong LLM to evaluate the output of other LLMs, has been met with skepticism by some. (Some of us were initially huge skeptics.) Nonetheless, when implemented well, LLM-as-Judge achieves decent correlation with human judgements, and can at least help build priors about how a new prompt or technique may perform. Specifically, when doing pairwise comparisons (e.g., control vs. treatment), LLM-as-Judge typically gets the direction right though the magnitude of the win/loss may be noisy.
+  -
+  -

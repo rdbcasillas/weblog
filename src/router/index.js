@@ -1,14 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeMenu from "../components/HomeMenu.vue";
 import Writing from "../views/Writing.vue";
+import Links from "../views/Links.vue";
 import MarkdownView from "../views/MarkdownView.vue";
 
 const routes = [
   { path: "/", component: HomeMenu },
   { path: "/writing", component: Writing },
+  { path: "/links", name: "Links", component: Links },
   {
     path: "/writing/:file",
-    name: "MarkdownView",
+    name: "WritingMarkdownView",
+    component: MarkdownView,
+  },
+  {
+    path: "/links/:year/:file",
+    name: "LinksMarkdownView",
     component: MarkdownView,
   },
   //   { path: "/programming", component: Programming },

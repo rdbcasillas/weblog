@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { useRoute } from "vue-router";
 export default {
   computed: {
     breadcrumbs() {
@@ -32,6 +33,13 @@ export default {
           path: index < pathArray.length - 1 ? to : null,
         };
       });
+      const route = useRoute();
+      if (route.path.startsWith("/links")) {
+        return [
+          { name: "Home", path: "/" },
+          { name: "Links", path: "/links" },
+        ];
+      }
       return [{ name: "Home", path: "/" }, ...breadcrumbs];
     },
   },

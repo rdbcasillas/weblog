@@ -18,7 +18,13 @@ const title = ref("");
 const content = ref("");
 
 onMounted(async () => {
-  const filePath = `../writings/${route.params.file}.md`;
+  let filePath;
+  if (route.name === "WritingMarkdownView") {
+    filePath = `../writings/${route.params.file}.md`;
+  } else if (route.name === "LinksMarkdownView") {
+    filePath = `${route.params.file}`;
+    //filePath = `../links/${route.params.year}/${route.params.file}.md`;
+  }
   console.log("Attempting to load:", filePath);
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);
