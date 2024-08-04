@@ -1,11 +1,14 @@
 <template>
   <div>
     <Breadcrumb />
-
+    <Filters
+      @toggle-tags="showTags = $event"
+      @search-posts="searchQuery = $event"
+    />
     <div class="pt-5">
       <ul class="list-none pl-5">
         <li
-          v-for="(file, index) in sortedMarkdownFiles"
+          v-for="(file, index) in filteredFiles"
           :key="index"
           class="p-2 transition-colors duration-300"
         >
@@ -18,7 +21,7 @@
           <span v-if="file.date" class="text-gray-500 text-sm ml-1">
             <span class="pipe"> | </span> {{ formatDate2(file.date) }}
           </span>
-          <div class="tags">
+          <div v-if="showTags" class="tags">
             <span v-for="(tag, idx) in file.tags" :key="idx" class="tag-item">
               {{ tag }}
             </span>
@@ -32,22 +35,37 @@
 <script>
 import matter from "gray-matter";
 import { Buffer } from "buffer";
+import Filters from "../components/Filters.vue";
 const markdownFiles = import.meta.glob("../writings/*.md", { as: "raw" });
 
 export default {
   name: "Writing",
+  components: { Filters },
   data() {
     return {
       markdownFiles: Object.keys(markdownFiles).map((file) => {
         const fileName = file.split("/").pop().replace(".md", "");
         return { path: file, name: fileName };
       }),
+      showTags: false,
+      searchQuery: "",
     };
   },
   computed: {
     sortedMarkdownFiles() {
       return this.markdownFiles.sort(
         (a, b) => new Date(b.date) - new Date(a.date)
+      );
+    },
+    filteredFiles() {
+      if (!this.searchQuery) {
+        return this.sortedMarkdownFiles;
+      }
+      const query = this.searchQuery.toLowerCase();
+      return this.sortedMarkdownFiles.filter(
+        (file) =>
+          file.title.toLowerCase().includes(query) ||
+          file.tags.some((tag) => tag.toLowerCase().includes(query))
       );
     },
   },
@@ -84,12 +102,9 @@ export default {
   async created() {
     this.markdownFiles = await Promise.all(
       Object.keys(markdownFiles).map(async (file) => {
-        console.log(file);
         const fileName = file.split("/").pop().replace(".md", "");
         const fileContent = await markdownFiles[file]();
-        console.log("content", fileContent);
         const { data } = matter(Buffer.from(fileContent));
-        console.log("data", data);
 
         return {
           path: file,

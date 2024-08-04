@@ -25,7 +25,6 @@ onMounted(async () => {
     filePath = `${route.params.file}`;
     //filePath = `../links/${route.params.year}/${route.params.file}.md`;
   }
-  console.log("Attempting to load:", filePath);
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);
     if (response.ok) {
