@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import matter from "gray-matter";
+//import matter from "gray-matter";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router"; // Import useRoute
 import { VueMarkdownIt } from "@f3ve/vue-markdown-it";
@@ -22,8 +22,7 @@ onMounted(async () => {
   if (route.name === "WritingMarkdownView") {
     filePath = `../writings/${route.params.file}.md`;
   } else if (route.name === "LinksMarkdownView") {
-    filePath = `${route.params.file}`;
-    //filePath = `../links/${route.params.year}/${route.params.file}.md`;
+    filePath = `../links/${route.params.year}/${route.params.file}.md`;
   }
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);

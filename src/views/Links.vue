@@ -8,12 +8,12 @@
           <div
             v-for="month in year.months"
             :key="month.name"
-            class="border p-2"
+            class="border p-2 grid grid-cols-3 gap-4 mt-4"
           >
             <router-link
               :to="{
                 name: 'LinksMarkdownView',
-                params: { year: year.year, file: month.file },
+                params: { year: year.year, file: month.name },
               }"
               class="text-blue-800 hover:underline"
             >
@@ -48,24 +48,67 @@ export default {
   },
   computed: {
     groupedLinks() {
+      const monthOrder = [
+        "December",
+        "November",
+        "October",
+        "September",
+        "August",
+        "July",
+        "June",
+        "May",
+        "April",
+        "March",
+        "February",
+        "January",
+      ];
+
+      const sortMonths = (months) => {
+        return months.sort((a, b) => {
+          return monthOrder.indexOf(a.name) - monthOrder.indexOf(b.name);
+        });
+      };
+
       const grouped = this.links.reduce((acc, link) => {
         const year = acc.find((y) => y.year === link.year);
         if (year) {
           year.months.push({ name: link.month, file: link.file });
+          year.months = sortMonths(year.months); // Sort months for the year
         } else {
           acc.push({
             year: link.year,
-            months: [{ name: link.month, file: link.file }],
+            months: sortMonths([{ name: link.month, file: link.file }]),
           });
         }
         return acc;
       }, []);
+
       return grouped.sort((a, b) => b.year - a.year);
     },
+    // groupedLinks() {
+    //   const grouped = this.links.reduce((acc, link) => {
+    //     const year = acc.find((y) => y.year === link.year);
+    //     if (year) {
+    //       year.months.push({ name: link.month, file: link.file });
+    //     } else {
+    //       acc.push({
+    //         year: link.year,
+    //         months: [{ name: link.month, file: link.file }],
+    //       });
+    //     }
+    //     console.log("hello", acc);
+    //     return acc;
+    //   }, []);
+    //   return grouped.sort((a, b) => b.year - a.year);
+    // },
   },
 };
 </script>
 
 <style scoped>
-/* Add your styles here */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
 </style>
