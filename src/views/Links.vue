@@ -29,7 +29,6 @@
 
 <script>
 const markdownFiles = import.meta.glob("../links/**/*.md");
-console.log("hi", markdownFiles);
 export default {
   name: "Links",
   data() {

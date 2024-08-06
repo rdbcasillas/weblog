@@ -27,7 +27,8 @@ onMounted(async () => {
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);
     if (response.ok) {
-      const markdown = await response.text();
+      let markdown = await response.text();
+      markdown = markdown.replace(/---\n[\s\S]*?\n---/, "");
       const [fileTitle, ...fileContent] = markdown.split("\n");
       title.value = fileTitle.replace(/^#\s*/, ""); // Remove Markdown heading symbol
       content.value = fileContent.join("\n");

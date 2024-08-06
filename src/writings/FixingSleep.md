@@ -6,6 +6,8 @@ tags:
 date: 2024-08-02
 ---
 
+# Changing Sleep Pattern
+
 There is a strange feeling that I notice when I am sleep deprived. I feel like wanting to sleep and not sleep at the same time. The head feels heavier. Thoughts are a bit foggy. They don't move around smoothly and they are under lesser control than usual.
 
 I don't think I am chronically sleep deprived. But it happens often enough that I should be looking for techniques to reduce it as much as possible.

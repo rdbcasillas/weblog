@@ -1,18 +1,20 @@
-## June 2024 links
+---
+title: June 2024
+---
 
-- https://e360.yale.edu/features/global_extinction_rates_why_do_estimates_vary_so_wildly
-- https://www.space.com/west-antarctic-ice-sheet-melting-unavoidable
-- https://nautil.us/the-collapse-is-coming-will-humanity-adapt-626051/
-- https://www.kalzumeus.com/2011/07/08/business-psychology/
-- https://www.lesswrong.com/posts/rWnCXouKEsJfBcMmA/positive-focusing
-- https://longnow.org/essays/richard-feynman-connection-machine/
+## June 2024
+
+- [Global Extinction Rates: Why Do Estimates Vary So Wildly?](https://e360.yale.edu/features/global_extinction_rates_why_do_estimates_vary_so_wildly)
+- [The West Antarctic Ice Sheet is melting, and it's too late to stop it](https://www.space.com/west-antarctic-ice-sheet-melting-unavoidable)
+- [The Collapse Is Coming. Will Humanity Adapt?](https://nautil.us/the-collapse-is-coming-will-humanity-adapt-626051/)
+- [How Running A Business Changes The Way You Think](https://www.kalzumeus.com/2011/07/08/business-psychology/)
+- [Positive Focusing](https://www.lesswrong.com/posts/rWnCXouKEsJfBcMmA/positive-focusing)
+- [Richard Feynman and The Connection Machine](https://longnow.org/essays/richard-feynman-connection-machine/)
   - In retrospect I realize that in almost everything that we worked on together, we were both amateurs. In digital physics, neural networks, even parallel computing, we never really knew what we were doing. But the things that we studied were so new that no one else knew exactly what they were doing either. It was amateurs who made the progress.
   - Actually, I doubt that it was "progress" that most interested Richard. He was always searching for patterns, for connections, for a new way of looking at something, but I suspect his motivation was not so much to understand the world as it was to find new ideas to explain. The act of discovery was not complete for him until he had taught it to someone else.
   - "Yeah," he sighed, "that bugs me sometimes too. But not so much as you think." And after a few more steps, "When you get as old as I am, you start to realize that you've told most of the good stuff you know to other people anyway."
   - We walked along in silence for a few minutes. Then we came to a place where another trail crossed and Richard stopped to look around at the surroundings. Suddenly a grin lit up his face. "Hey," he said, all trace of sadness forgotten, "I bet I can show you a better way home."
--
--
-- https://www.oreilly.com/radar/what-we-learned-from-a-year-of-building-with-llms-part-i/
+- [What We Learned from a Year of Building with LLMs (Part I)](https://www.oreilly.com/radar/what-we-learned-from-a-year-of-building-with-llms-part-i/)
   - The idea of in-context learning via n-shot prompts is to provide the LLM with a few examples that demonstrate the task and align outputs to our expectations.
   - If n is too low, the model may over-anchor on those specific examples, hurting its ability to generalize. As a rule of thumb, aim for n ≥ 5. Don’t be afraid to go as high as a few dozen.
   - Chain of thought prompting - CoT - LLM explains thought process before final answer
@@ -43,9 +45,6 @@
   - Long context models won't make RAG obsolete
   - Prompting an LLM is just the beginning. To get the most juice out of them, **we need to think beyond a single prompt and embrace workflows.** For example, how could we split a single complex task into multiple simpler tasks? When is finetuning or caching helpful with increasing performance and reducing latency/cost?
   - Small tasks with clear objectives make for the best agent or flow prompts. It’s not required that every agent prompt requests structured output, but structured outputs help a lot to interface with whatever system is orchestrating the agent’s interactions with the environment.
-  - ![image.png](../assets/image_1717508853283_0.png)
   - Deterministic workflows essential for now
   - The most successful agent builders may be those with strong experience managing junior engineers because the process of generating plans is similar to how we instruct and manage juniors. We give juniors clear goals and concrete plans, instead of vague open-ended directions, and we should do the same for our agents too.
   - LLM-as-Judge, where we use a strong LLM to evaluate the output of other LLMs, has been met with skepticism by some. (Some of us were initially huge skeptics.) Nonetheless, when implemented well, LLM-as-Judge achieves decent correlation with human judgements, and can at least help build priors about how a new prompt or technique may perform. Specifically, when doing pairwise comparisons (e.g., control vs. treatment), LLM-as-Judge typically gets the direction right though the magnitude of the win/loss may be noisy.
-  -
-  -
