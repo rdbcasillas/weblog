@@ -21,7 +21,6 @@
             </router-link>
           </div>
         </div>
-        <hr class="my-4" />
       </div>
     </div>
   </div>
@@ -109,5 +108,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1rem;
+  border-width: 0px;
 }
 </style>

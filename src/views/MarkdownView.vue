@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <div class="prose">
+  <div class="prose markdown-content">
     <h1 v-if="title" class="text-3xl font-bold mb-4">{{ title }}</h1>
     <vue-markdown-it :source="content" :options="options" />
   </div>
@@ -62,5 +62,26 @@ onMounted(async () => {
   padding: 1rem;
   font-family: sans-serif;
   line-height: 1.6;
+}
+.markdown-content div > ul {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 1.5em; /* Adjust padding */
+}
+
+.markdown-content div > ul > li {
+  position: relative;
+  padding-left: 1em;
+}
+
+.markdown-content div > ul > li::before {
+  content: "*"; /* Custom bullet character */
+  color: #2c3e50; /* Bullet color */
+  font-size: 1.4em; /* Bullet size */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.markdown-content a:hover {
+  color: brown;
 }
 </style>
