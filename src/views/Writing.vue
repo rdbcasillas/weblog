@@ -8,7 +8,9 @@
     <div class="pt-5">
       <ul class="list-none pl-5">
         <li
-          v-for="(file, index) in filteredFiles"
+          v-for="(file, index) in filteredFiles.filter(
+            (file) => !file.tags.includes('notes')
+          )"
           :key="index"
           class="p-2 transition-colors duration-300"
         >

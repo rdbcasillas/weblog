@@ -8,3 +8,4 @@ title: August 2024
 - [Writing out a value](https://textbook.sfsd.io/4/writing-out-a-value)
 - [Social Meditation Guide](https://www.socialmeditation.guide)
 - [Ten books from MIT faculty to expand your knowledge of teaching, learning, and technology](https://medium.com/open-learning/ten-books-from-mit-faculty-to-expand-your-knowledge-of-teaching-learning-and-technology-b9508faf3144)
+- [Dwarkesh podcast with Andy Matuschak](https://www.dwarkeshpatel.com/p/andy-matuschak) ([Highlights](/writing/dwarkeshandy))

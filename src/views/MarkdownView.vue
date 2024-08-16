@@ -27,6 +27,8 @@ onMounted(async () => {
     filePath = `../writings/${route.params.file}.md`;
   } else if (route.name === "LinksMarkdownView") {
     filePath = `../links/${route.params.year}/${route.params.file}.md`;
+  } else if (route.name === "NotesMarkdownView") {
+    filePath = `/notes/${route.params.file}.md`;
   }
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);
