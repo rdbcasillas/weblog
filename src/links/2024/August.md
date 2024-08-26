@@ -18,3 +18,4 @@ title: August 2024
 - [The All-TIME 100 Albums](https://web.archive.org/web/20071109195005/http://www.time.com/time/2006/100albums/index.html)
 - [AQUA - Voice native text editor](https://withaqua.com)
 - [masterlist of 3rd spaces](https://www.patriciamou.com/newsletter-archive/the-journey-masterlist-of-3rd-spaces)
+- [The (Sort of) Complete Guide to Actually Getting Better at Meditation](https://rationaldharma.com/blog/the-sort-of-complete-guide-to-actually-getting-better-at-meditation/)
