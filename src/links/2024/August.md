@@ -19,3 +19,5 @@ title: August 2024
 - [AQUA - Voice native text editor](https://withaqua.com)
 - [masterlist of 3rd spaces](https://www.patriciamou.com/newsletter-archive/the-journey-masterlist-of-3rd-spaces)
 - [The (Sort of) Complete Guide to Actually Getting Better at Meditation](https://rationaldharma.com/blog/the-sort-of-complete-guide-to-actually-getting-better-at-meditation/)
+- [The Felt Sense: What, Why and How](https://www.lesswrong.com/posts/eccTPEonRe4BAvNpD/the-felt-sense-what-why-and-how/#Examples_of_felt_senses)
+- [How to think in writing](https://www.henrikkarlsson.xyz/p/writing-to-think)
