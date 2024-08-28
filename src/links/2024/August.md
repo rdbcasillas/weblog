@@ -21,3 +21,4 @@ title: August 2024
 - [The (Sort of) Complete Guide to Actually Getting Better at Meditation](https://rationaldharma.com/blog/the-sort-of-complete-guide-to-actually-getting-better-at-meditation/)
 - [The Felt Sense: What, Why and How](https://www.lesswrong.com/posts/eccTPEonRe4BAvNpD/the-felt-sense-what-why-and-how/#Examples_of_felt_senses)
 - [How to think in writing](https://www.henrikkarlsson.xyz/p/writing-to-think)
+- [Against the Burden of Knowledge](https://www.theseedsofscience.pub/p/against-the-burden-of-knowledge)
