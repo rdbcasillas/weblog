@@ -22,3 +22,4 @@ title: August 2024
 - [The Felt Sense: What, Why and How](https://www.lesswrong.com/posts/eccTPEonRe4BAvNpD/the-felt-sense-what-why-and-how/#Examples_of_felt_senses)
 - [How to think in writing](https://www.henrikkarlsson.xyz/p/writing-to-think)
 - [Against the Burden of Knowledge](https://www.theseedsofscience.pub/p/against-the-burden-of-knowledge)
+- [Understanding your understanding](https://www.lesswrong.com/posts/4gevjbK77NQS6hybY/understanding-your-understanding)
