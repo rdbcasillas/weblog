@@ -23,3 +23,6 @@ title: August 2024
 - [How to think in writing](https://www.henrikkarlsson.xyz/p/writing-to-think)
 - [Against the Burden of Knowledge](https://www.theseedsofscience.pub/p/against-the-burden-of-knowledge)
 - [Understanding your understanding](https://www.lesswrong.com/posts/4gevjbK77NQS6hybY/understanding-your-understanding)
+- [The War on Sensemaking, Daniel Schmactenberger](https://www.youtube.com/watch?v=7LqaotiGWjQ)(video)
+- [Crows Are Even Smarter Than We Thought](https://nautil.us/crows-are-even-smarter-than-we-thought-820066/)
+- [What Life Means to Einstein](https://www.saturdayeveningpost.com/wp-content/uploads/satevepost/what_life_means_to_einstein.pdf)
