@@ -23,13 +23,28 @@ const options = {
 
 onMounted(async () => {
   let filePath;
-  if (route.name === "WritingMarkdownView") {
-    filePath = `../writings/${route.params.file}.md`;
-  } else if (route.name === "LinksMarkdownView") {
-    filePath = `../links/${route.params.year}/${route.params.file}.md`;
-  } else if (route.name === "NotesMarkdownView") {
-    filePath = `/notes/${route.params.file}.md`;
+  if (process.env.NODE_ENV === "production") {
+    // Production (Netlify): Use absolute paths from the root
+    if (route.name === "WritingMarkdownView") {
+      filePath = `/writings/${route.params.file}.md`;
+    } else if (route.name === "LinksMarkdownView") {
+      filePath = `/links/${route.params.year}/${route.params.file}.md`;
+    }
+  } else {
+    // Development (local): Use relative paths
+    if (route.name === "WritingMarkdownView") {
+      filePath = `../writings/${route.params.file}.md`;
+    } else if (route.name === "LinksMarkdownView") {
+      filePath = `../links/${route.params.year}/${route.params.file}.md`;
+    }
   }
+  // if (route.name === "WritingMarkdownView") {
+  //   filePath = `../writings/${route.params.file}.md`;
+  // } else if (route.name === "LinksMarkdownView") {
+  //   filePath = `../links/${route.params.year}/${route.params.file}.md`;
+  // } else if (route.name === "NotesMarkdownView") {
+  //   filePath = `/notes/${route.params.file}.md`;
+  // }
 
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);
