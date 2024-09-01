@@ -4,6 +4,15 @@ title: August 2024
 
 ## August 2024
 
+#### In-Progress Books
+
+- [The Oxford Handbook of Thinking and Reading](https://academic.oup.com/edited-volume/34559)
+- [Determined: A Science of Life Without Free Will](https://www.goodreads.com/book/show/83817782-determined)
+- [Design Unbound](https://www.desunbound.com)(Vol. 1)
+- [The Power of Focusing](https://www.goodreads.com/en/book/show/408265.The_Power_of_Focusing)
+
+#### Useful reads/websites
+
 - [What the hell are values?](https://textbook.sfsd.io/60c611e238c74a889a946ec63683ee48)
 - [Writing out a value](https://textbook.sfsd.io/4/writing-out-a-value)
 - [Social Meditation Guide](https://www.socialmeditation.guide)
@@ -26,3 +35,4 @@ title: August 2024
 - [The War on Sensemaking, Daniel Schmactenberger](https://www.youtube.com/watch?v=7LqaotiGWjQ)(video)
 - [Crows Are Even Smarter Than We Thought](https://nautil.us/crows-are-even-smarter-than-we-thought-820066/)
 - [What Life Means to Einstein](https://www.saturdayeveningpost.com/wp-content/uploads/satevepost/what_life_means_to_einstein.pdf)
+- [A conceptual framework for consciousness](https://www.pnas.org/doi/full/10.1073/pnas.2116933119)

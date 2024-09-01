@@ -16,7 +16,7 @@
             >Links</router-link
           >
         </li>
-        <li>
+        <!-- <li>
           <router-link
             to="/portal"
             class="text-lg text-lightbrown hover:underline"
@@ -29,7 +29,7 @@
             class="text-lg text-lightbrown hover:underline"
             >Music</router-link
           >
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>
