@@ -4,6 +4,7 @@ import Markdown from "vite-plugin-md";
 import { Buffer } from "buffer";
 
 export default defineConfig({
+  base: "/",
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],

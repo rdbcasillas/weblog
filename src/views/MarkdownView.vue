@@ -30,8 +30,10 @@ onMounted(async () => {
   } else if (route.name === "NotesMarkdownView") {
     filePath = `/notes/${route.params.file}.md`;
   }
+
   try {
     const response = await fetch(new URL(filePath, import.meta.url).href);
+    //const response = await fetch(filePath);
     if (response.ok) {
       let markdown = await response.text();
       markdown = markdown.replace(/---\n[\s\S]*?\n---/, "");
