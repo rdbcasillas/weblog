@@ -14,4 +14,5 @@ title: September 2024
 #### Useful reads/websites
 
 - [We are already in an AI takeoff](https://www.lesswrong.com/posts/LbyxFk8JmPKPAQBvL/we-re-already-in-ai-takeoff)
--
+- [What Are the Signs of Codependency?](https://psychcentral.com/lib/symptoms-signs-of-codependency)
+- [Reality-Revealing and Reality-Masking Puzzles](https://www.lesswrong.com/posts/byewoxJiAfwE6zpep/reality-revealing-and-reality-masking-puzzles)
